@@ -1,0 +1,26 @@
+<app-page-title titleHeading='Progress Bars' titleDescription='You can use the progress bars on their own or in combination with other widgets.'></app-page-title>
+
+
+<div class="row">
+    <div class="col-xl-12">
+        <app-example-wrapper-simple sectionHeading="Descargar Padron Reducido">
+
+            <div class="text-center">
+                <button type="button" class="btn btn-primary" (click)="downloadFile()">Descargar Padron</button>
+
+            </div>
+
+
+        </app-example-wrapper-simple>
+        <app-example-wrapper-simple sectionHeading="Progreso">
+
+            <div class="text-center" *ngIf="(loader | async)">
+                <fa-icon [icon]="['fas', 'spinner']" size="4x" [spin]="true" class="text-center"></fa-icon>
+            </div>
+            <h5>{{message}}</h5>
+
+        </app-example-wrapper-simple>
+        
+    </div>
+</div>
+

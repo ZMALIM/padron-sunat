@@ -11,12 +11,13 @@
     "target": "es2015",
     "module": "esnext",
     "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom"],
+    "lib": ["es2019", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@sunat/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@sunat/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@api/*": ["apps/api/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Message } from '@sunat/api-interfaces';
 
 @Component({
-  selector: 'sunat-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'app-root',
+  template: '<router-outlet></router-outlet><ng-progress></ng-progress>'
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+
+  constructor() { }
+
 }

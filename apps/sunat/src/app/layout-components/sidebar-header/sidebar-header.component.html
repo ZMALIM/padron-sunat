@@ -1,0 +1,15 @@
+<div class="app-sidebar--header">
+    <div class="nav-logo">
+        <a routerLink="/dashboard-default" title="Bamburgh Angular Admin Dashboard with NGX Bootstrap Free">
+            <i>
+                <img alt="Bamburgh Angular Admin Dashboard with NGX Bootstrap Free" src="assets/images/angular.svg">
+            </i>
+            <span>Bamburgh</span>
+        </a>
+    </div>
+    <button (click)="toggleSidebarMobileOpen()" [ngClass]="{'is-active' : globals.toggleSidebarMobile}" class="navbar-toggler hamburger hamburger--elastic toggle-mobile-sidebar-btn" type="button">
+    <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+    </span>
+    </button>
+</div>

@@ -5,17 +5,24 @@
 
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
+import { ConfigService } from '@nestjs/config';
 
 import { AppModule } from './app/app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  const globalPrefix = 'api';
-  app.setGlobalPrefix(globalPrefix);
-  const port = process.env.PORT || 3333;
-  await app.listen(port, () => {
-    Logger.log('Listening at http://localhost:' + port + '/' + globalPrefix);
-  });
+    const app = await NestFactory.create(AppModule, {
+        cors: true
+    });
+    const config: ConfigService = app.get(ConfigService);
+    const port = config.get<number>('API_PORT');
+    const globalPrefix = config.get<string>('API_GLOBAL_PREFIX');
+
+    app.enableCors();
+    app.setGlobalPrefix(globalPrefix);
+    await app.listen(port, () => {
+        Logger.log(`API Escuchando en http://localhost:${port}/${globalPrefix}`, 'HTTP');
+		Logger.log('Presione Ctrl + C para salir.', 'HTTP');
+    });
 }
 
 bootstrap();

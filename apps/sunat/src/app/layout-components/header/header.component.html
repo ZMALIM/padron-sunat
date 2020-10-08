@@ -1,0 +1,21 @@
+<div class="app-header" [ngClass]="{
+    'app-header--shadow' : globals.headerShadow,
+    'app-header--opacity-bg' : globals.headerTransparentBg
+    }">
+    <div class="app-header--pane">
+        <button [ngClass]="{'is-active' : globals.toggleSidebarMobile}" class="navbar-toggler hamburger hamburger--elastic toggle-mobile-sidebar-btn" (click)="toggleSidebarMobileOpen()" type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+        <a href="https://uifort.com/template/bamburgh-angular-admin-dashboard-ngx-bootstrap-free" target="_blank" class="btn ml-3 mr-3 btn-transition-none btn-sm btn-neutral-success">
+            Download now
+        </a>
+        <a href="https://uifort.com/template/bamburgh-angular-admin-dashboard-ngx-bootstrap-pro" target="_blank" class="btn btn-transition-none btn-sm btn-neutral-warning">
+            View PRO Version
+        </a>
+    </div>
+    <div class="app-header--pane">
+        <app-header-userbox></app-header-userbox>
+    </div>
+</div>

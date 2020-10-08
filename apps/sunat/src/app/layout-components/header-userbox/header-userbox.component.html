@@ -1,0 +1,51 @@
+<div class="user-box position-relative ml-2" dropdown>
+  <a dropdownToggle
+          [routerLink]=""
+          class="p-0 d-flex align-items-center"
+  >
+    <div class="d-block d-44 rounded-sm overflow-hidden">
+        <img src="assets/images/avatars/avatar5.jpg" class="img-fluid" alt="..." />
+    </div>
+    <div class="d-none d-xl-block pl-2">
+      <div class="font-weight-bold">
+        Ryan Kent
+      </div>
+      <span class="text-black-50">
+        Senior accountant
+      </span>
+    </div>
+    <span class="pl-1 pl-xl-3"
+    ><fa-icon [icon]="['fas', 'angle-down']" class="opacity-5"></fa-icon
+    ></span>
+  </a>
+  <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown-menu-lg p-0">
+    <ul class="list-group list-group-flush text-left bg-transparent">
+      <li class="list-group-item rounded-top">
+        <ul class="nav nav-neutral-primary nav-pills flex-column">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="">
+              My Account
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="">
+              Profile settings
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="">
+              Active tasks
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="list-group-item rounded-bottom p-3 text-center">
+        <a [routerLink]="" class="btn btn-facebook" tooltip="Facebook">
+        <span class="btn-wrapper--icon">
+          <fa-icon [icon]="['fab', 'facebook']"></fa-icon>
+        </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

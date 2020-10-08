@@ -1,0 +1,8 @@
+<div [class]="'app-sidebar app-sidebar--' + globals.sidebarBackgroundStyle + ' ' + globals.sidebarBackground"
+>
+  <app-sidebar-header></app-sidebar-header>
+    <div class="app-sidebar--content">
+      <app-sidebar-menu></app-sidebar-menu>
+    </div>
+</div>
+<div class="app-sidebar-overlay" (click)="toggleSidebarMobileOpen()" [ngClass]="{'is-active' : globals.toggleSidebarMobile}"></div>

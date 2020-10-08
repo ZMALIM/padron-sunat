@@ -1,4 +1,5 @@
 {
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "projects": {
     "sunat": {
@@ -21,9 +22,18 @@
             "polyfills": "apps/sunat/src/polyfills.ts",
             "tsConfig": "apps/sunat/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/sunat/src/favicon.ico", "apps/sunat/src/assets"],
-            "styles": ["apps/sunat/src/styles.scss"],
-            "scripts": []
+            "assets": [
+              "apps/sunat/src/favicon.ico",
+              "apps/sunat/src/assets"
+            ],
+            "styles": [
+              "apps/sunat/src/assets/base.scss",
+              "node_modules/pe7-icon/dist/scss/pe-icon-7-stroke.scss",
+              "node_modules/socicon/css/socicon.css"
+            ],
+            "scripts": [
+              "node_modules/apexcharts/dist/apexcharts.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -37,15 +47,16 @@
               "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
-              "namedChunks": false,
-              "extractLicenses": true,
+              "namedChunks": true,
+              "aot": true,
+              "extractLicenses": false,
               "vendorChunk": false,
               "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "15mb",
+                  "maximumError": "20mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -81,7 +92,10 @@
               "apps/sunat/tsconfig.app.json",
               "apps/sunat/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/sunat/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/sunat/**/*"
+            ]
           }
         },
         "test": {
@@ -114,8 +128,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/sunat-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/sunat-e2e/**/*"]
+            "tsConfig": [
+              "apps/sunat-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/sunat-e2e/**/*"
+            ]
           }
         }
       }
@@ -133,7 +152,9 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": [
+              "apps/api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -162,7 +183,10 @@
               "apps/api/tsconfig.app.json",
               "apps/api/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/api/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/api/**/*"
+            ]
           }
         },
         "test": {
@@ -187,7 +211,10 @@
               "libs/api-interfaces/tsconfig.lib.json",
               "libs/api-interfaces/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/api-interfaces/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/api-interfaces/**/*"
+            ]
           }
         },
         "test": {
